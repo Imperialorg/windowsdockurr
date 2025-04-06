@@ -4,7 +4,7 @@ services:
     container_name: windows
     privileged: true
     environment:
-      VERSION: "7e"
+      VERSION: "https://archive.org/download/windows7ultimatex64_201912/7601.24214.180801-1700.win7sp1_ldr_escrow_CLIENT_ULTIMATE_x64FRE_en-us.iso"
       RAM_SIZE: "64G"
       CPU_CORES: "16"
       DISK_SIZE: "140G"
