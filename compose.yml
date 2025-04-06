@@ -4,7 +4,8 @@ services:
     container_name: windows
     privileged: true
     environment:
-      VERSION: "xp"
+      VERSION: "11"
+      VMX: "Y"
       RAM_SIZE: "64G"
       CPU_CORES: "16"
       DISK_SIZE: "140G"
