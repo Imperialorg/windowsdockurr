@@ -53,7 +53,7 @@ services:
 ##### Via Docker CLI:
 
 ```bash
-docker run -it --rm --name windows -p 8006:8006 --device=/dev/kvm --device=/dev/net/tun --cap-add NET_ADMIN -v ${PWD:-.}/windows:/storage --stop-timeout 120 dockurr/windows
+docker run -it --rm --name windows -p 8006:8006 --device=/dev/kvm --device=/dev/net/tun --cap-add NET_ADMIN -v "${PWD:-.}/windows:/storage" --stop-timeout 120 dockurr/windows
 ```
 
 ##### Via Kubernetes:
@@ -102,8 +102,8 @@ kubectl apply -f https://raw.githubusercontent.com/dockur/windows/refs/heads/mas
   | `10e`  | Windows 10 Enterprise     | 5.2 GB   |
   ||||
   | `8e`   | Windows 8.1 Enterprise    | 3.7 GB   |
-  | `7e`   | Windows 7 Enterprise      | 3.0 GB   |
-  | `ve`   | Windows Vista Enterprise  | 3.0 GB   |
+  | `7u`   | Windows 7 Ultimate        | 3.1 GB   |
+  | `vu`   | Windows Vista Ultimate    | 3.0 GB   |
   | `xp`   | Windows XP Professional   | 0.6 GB   |
   | `2k`   | Windows 2000 Professional | 0.4 GB   | 
   ||||  
@@ -226,7 +226,7 @@ kubectl apply -f https://raw.githubusercontent.com/dockur/windows/refs/heads/mas
   
   ```yaml
   volumes:
-    - ./example.iso:/custom.iso
+    - ./example.iso:/boot.iso
   ```
 
   Replace the example path `./example.iso` with the filename of your desired ISO file. The value of `VERSION` will be ignored in this case.
